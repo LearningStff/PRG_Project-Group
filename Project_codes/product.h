@@ -1,5 +1,5 @@
-ifndef #product_h
-define #product_h
+#ifndef product_h
+#define product_h
 
 class Product {
   private:
