@@ -52,7 +52,7 @@ int loadDataFromCsv(const char* filePath)
 }
 
 //Saves all changes made to the departments and their products
-void ManagerInterface::saveChangesToCSV() {
+void saveChangesToCSV() {
 	cout << "\n===== Save Changes to CSV =====" << endl;
 
 	// Open file for writing
