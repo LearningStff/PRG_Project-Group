@@ -1,14 +1,10 @@
 #define CRT_SECURE_NO_WARNINGS
+#include "globals.h"
 #include "managerInterface.h"
+#include "fileHandling.h"
 #include <iostream>
 #include <cstring>
 using namespace std;
-
-
-// Global variables
-extern Department* StoreDepartments; // Pointer to the array of departments
-extern int TotalDepartments; //total number of departments
-extern const char* csvFile; //the path of th CSV file
 
 // Constructor
 ManagerInterface::ManagerInterface()
@@ -163,34 +159,6 @@ void ManagerInterface::addItemToDepartment() {
 
 //Saves all changes made to the departments and their products
 void ManagerInterface::saveChangesToCSV() {
-    cout << "\n===== Save Changes to CSV =====" << endl;
-
-    // Open file for writing
-    FILE* file = fopen(csvFile, "w");
-
-    //If the file couldn't be opened
-    if (!file) {
-        displayErrorMessage("Could not open file for writing.");
-        return;
-    }
-
-    // Write the number of departments
-    fprintf(file, "%d\n", TotalDepartments);
-
-    // Write each department and its items
-    for (int i = 0; i < TotalDepartments; i++) {
-        Department& dept = StoreDepartments[i];
-
-        // Write department info (name and item count)
-        fprintf(file, "%s,%d\n", dept.displayDeptNames(), dept.getTotalProducts());
-
-        // List all products and write to file
-        for (int j = 0; j < dept.getTotalProducts(); j++) {
-            Product product = dept.getProductAt(j);
-            fprintf(file, "%s,%.2f,%d\n", product.getName(), product.getPrice(), product.getQuantity());
-        }
-    }
-
-    fclose(file); // close the file
-    cout << "Changes saved successfully." << endl;
+    //Call the function from fileHandling.cpp to save the data
+    saveChangesToCSV();
 }
