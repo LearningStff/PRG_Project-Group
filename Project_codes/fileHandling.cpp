@@ -5,9 +5,9 @@
 #include "product.h"
 using namespace std;
 
-extern Department* StoreDepartments = nullptr;
-extern int TotalDepartments = 0;
-extern const char* csvFile = "grocery.csv";
+extern Department* StoreDepartments;
+extern int TotalDepartments;
+extern const char* csvFile;
 
 int loadDataFromCsv(const char* filePath)
 {
