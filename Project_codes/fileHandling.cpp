@@ -46,6 +46,8 @@ int loadDataFromCsv(const char* filePath)
 		}
 		StoreDepartments[d].setDepartmentInfo(depName.c_str(), P, pCount);
 	}
+	file.close();
+	return 0;
 }
 
 //Saves all changes made to the departments and their products
@@ -57,7 +59,7 @@ void saveChangesToCSV() {
 
 	//If the file couldn't be opened
 	if (!file) {
-		displayErrorMessage("Could not open file for writing.");
+		cerr << "Could not open file for writing.";
 		return;
 	}
 

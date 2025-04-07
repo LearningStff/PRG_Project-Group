@@ -31,6 +31,6 @@ class Cart{
     double calculateTotalPrice() const;
     int getTotalItems() const;
     bool isEmpty() const;
-}
+};
 
 #endif

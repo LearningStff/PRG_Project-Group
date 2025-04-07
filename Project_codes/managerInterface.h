@@ -12,7 +12,7 @@ public:
 	~ManagerInterface();
 
 	//Main function to run the manager interface
-	void run() overrirde();
+	void run() override;
 
 private:
 	//Manager menu functions

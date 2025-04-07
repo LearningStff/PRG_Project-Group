@@ -39,7 +39,7 @@ class Department{
 
    void setDepartmentInfo(const char* name, Product* products, int totalProducts);
   
-}
+};
 
 
 #endif

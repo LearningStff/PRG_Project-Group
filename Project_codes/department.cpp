@@ -64,13 +64,14 @@ using namespace std;
         m_products[m_totalProducts] = product;
         m_totalProducts++;
       }
-    }
   }
+  
 
   // list all products in department
   void Department::listProducts() const {
     if (m_totalProducts == 0){
       cout << "No current products in the department." << endl;
+      return;
     }
     for (int i = 0; i < m_totalProducts; i++){
       cout << m_products[i].getName() << "," << m_products[i].getPrice() << "per unit, " << m_products[i].getQuantity() << " units in stock." << endl;

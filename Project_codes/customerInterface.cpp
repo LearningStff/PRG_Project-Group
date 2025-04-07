@@ -211,7 +211,7 @@ void CustomerInterface::listItemsInDepartment(int departmentIndex) {
                 int availableQuantity = dept.getProductAt(itemIndex).getQuantity();
 
                 // Get quantity to buy
-                int quantity = getIntInput(1, availableQuantity, "Enter quantity to buy (max " + to_string(availableQuantity) + "): ");
+                int quantity = getIntInput(1, availableQuantity, ("Enter quantity to buy (max " + to_string(availableQuantity) + "): ").c_str());
 
                 // Add item to cart
                 addItemToCart(departmentIndex, itemIndex, quantity);
