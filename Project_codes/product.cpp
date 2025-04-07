@@ -5,6 +5,8 @@
 
 #include "product.h"
 
+using namespace std;
+
 namespace seneca {
     // member functions' definitions go here
   Product::Product(){
@@ -15,25 +17,47 @@ namespace seneca {
   }
   Product::Product(const char* name, double price, int quantity){
     // constructor to initalizes member variables to the values of the parameters
-    strcpy(m_name, name);
-    m_price = price;
-    m_quantity = quantity;
+    if (name != nullptr && name[0] != '\0') {
+      strcpy(m_name, name);
+    } else {
+      m_name[0] = '\0';
+    }
+    if (price > 0) {
+      m_price = price;
+    } else {
+      m_price = 0.0;
+    }
+    if (quantity > 0){
+      m_quantity = quantity;
+    } else {
+      quantity = 0;
+    }
   }
 
 
   // Getters functions
   void Product::name(const char* name){
     // sets the name of the product
-    strcpy(m_name, name);
+    if (name != nullptr && name[0] != '\0'){
+      strcpy(m_name, name);
+    } else {
+      m_name[0] = '\0';
+    }
   }
 
   void Product::setPrice(double price){
     // sets the price of the product
+    if (price < 0) {
+      price = 0.0;
+    }
     m_price = price;
   }
 
   void Product::setQuantity(int quantity){
     // sets the quantity of the product
+    if (quantity < 0){
+      quantity = 0;
+    }
     m_quantity = quantity;
   }
 
