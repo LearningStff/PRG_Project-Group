@@ -3,10 +3,6 @@
 #include "cart.h"
 #include "department.h"
 
-//Global variables
-extern Department* StoreDepartments;
-extern int TotalDepartments;
-
 class CustomerInterface : public Interface {
 public:
 	//Constructor
