@@ -59,6 +59,11 @@ using namespace std;
       m_totalProducts++;
       delete [] m_products;
       m_products = temp;
+      m_capacity = m_totalProducts;
+      } else {
+        m_products[m_totalProducts] = product;
+        m_totalProducts++;
+      }
     }
   }
 
@@ -72,5 +77,24 @@ using namespace std;
     }
   }
 
+  int Department::getTotalProducts() const {
+    return m_totalProducts;
+  }
+
+  // get product at index
+  Product Department::getProductAt(int index) const {
+    if (index < 0 || index >= m_totalProducts){
+      return Product();
+    }
+    return m_products[index];
+  }
 
 
+void Department::updateProductAt(int index, const Product& product){
+    if (index >= 0 && index < m_totalProducts){
+        m_products[index] = product;
+    }
+    else {
+        cout << "Invalid index." << endl;
+    }
+}

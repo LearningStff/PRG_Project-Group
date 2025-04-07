@@ -1,9 +1,9 @@
-
 #define CRT_SECURE_NO_WARNINGS
 #include "managerInterface.h"
 #include <iostream>
 #include <cstring>
 using namespace std;
+
 
 // Global variables
 extern Department* StoreDepartments; // Pointer to the array of departments
@@ -25,7 +25,7 @@ ManagerInterface::~ManagerInterface()
 //Main function to run the manager interface
 void ManagerInterface::run()
 {
-  displayMainMenu();
+	displayMainMenu();
 }
 
 

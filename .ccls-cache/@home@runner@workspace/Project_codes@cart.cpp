@@ -20,13 +20,16 @@ Cart::~Cart(){
   m_quantities = nullptr;
 }
 
-void Cart::addProductToCart(const Product& product, int quantity){
+bool Cart::addItem(const Product& product, int quantity){
   // add a product to the cart
   if (quantity > 0){
     m_products[m_totalItems] = product;
     m_quantities[m_totalItems] = quantity;
     m_totalItems++;
-    
+    return true;
+  } else {
+    cout << "Invalid quantity." << endl;
+    return false;
   }
 }
 
@@ -36,7 +39,7 @@ void Cart::listItemsInCart() const {
     // display the name, price, quantity, and total price of each item
     for (int i = 0; i < m_totalItems; i++){
       cout << m_products[i].getName() << "," << m_quantities[i] << " units, $"
-           << m_products[i].getPrice() << " per unit"; 
+           << m_products[i].getPrice() << " per unit" << endl; 
     }
 }
 
@@ -61,7 +64,7 @@ double Cart::calculateTotalPrice() const {
     // calculate the total price of all items in the cart
   double subtotal = 0.0;
   for (int i = 0; i < m_totalItems; i++){
-     double totalItems = m_products[] m_products[i].getPrice() * m_quantities[i]; 
+     double totalItems = m_products[i].getPrice() * m_quantities[i]; 
      subtotal = subtotal + totalItems;
   }
   return subtotal * 1.13;
@@ -70,4 +73,12 @@ double Cart::calculateTotalPrice() const {
 int Cart::getTotalItems() const {
   // return the total number of items in the cart
   return m_totalItems;
+}
+
+bool Cart::isEmpty() const{
+  // return true if the cart is empty, false otherwise
+  if (m_totalItems == 0) {
+    return true;
+  }
+  return false;
 }

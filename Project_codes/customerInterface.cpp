@@ -92,8 +92,8 @@ void CustomerInterface::listCartItems()
     }
     else //if the cart is not empty
     {
-        m_cart.displayItems(); //it shows the list of items in the cart
-        cout << "\nTotal Cost (with 13% tax): $" << m_cart.getTotalCost() << endl; //Calculates the total cost of items in the cart, including the tax, and displays the total
+        m_cart.listItemsInCart(); //it shows the list of items in the cart
+        cout << "\nTotal Cost (with 13% tax): $" << m_cart.calculateTotalPrice() << endl; //Calculates the total cost of items in the cart, including the tax, and displays the total
     }
 }
 
@@ -107,7 +107,7 @@ void CustomerInterface::checkout()
     }
     else {
         cout << "Thank you for your purchase!" << endl;
-        m_cart.clear(); //clears the cart for next purchases
+        m_cart.clearCart(); //clears the cart for next purchases
     }
 }
 
@@ -234,7 +234,7 @@ void CustomerInterface::addItemToCart(int departmentIndex, int ItemIndex, int qu
     Department& dept = StoreDepartments[departmentIndex];
 
     //Get the product at the given index from the department object
-    Product product = dept.getProductAt(itemIndex); /*this copy of the Product object is used to add the item in the cart and later to update the department's inventory*/
+    Product product = dept.getProductAt(ItemIndex); /*this copy of the Product object is used to add the item in the cart and later to update the department's inventory*/
 
     //add item to cart
     if (m_cart.addItem(product, quantity)) //check if the item can be added to the cart based on quantity

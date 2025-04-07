@@ -31,7 +31,11 @@ class Department{
     void listProducts() const;
 
     // Action: Writes all modifications (departments and items) to the CSV file.
+    int getTotalProducts() const; // Add this line to get the total number of products in the department
 
+    Product getProductAt(int index) const;
+
+    void Department(int index, const Product& product)
     
 
     

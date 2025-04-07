@@ -16,7 +16,7 @@ class Cart{
     // necessary public functions
     // Add to cart function
 
-    void addProductToCart(const Product& product, int quantity);
+    bool addItem(const Product& product, int quantity);
 
     // list items in cart function
     void listItemsInCart() const;
@@ -30,6 +30,7 @@ class Cart{
     // other functions (maybe useful)
     double calculateTotalPrice() const;
     int getTotalItems() const;
+    bool isEmpty() const;
 }
 
 #endif
