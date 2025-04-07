@@ -98,3 +98,18 @@ void Department::updateProductAt(int index, const Product& product){
         cout << "Invalid index." << endl;
     }
 }
+
+void Department::setDepartmentInfo(const char* name, Product* products, int totalProducts){
+    setDeptName(name);
+    if (m_products != nullptr){
+        delete [] m_products;
+    }
+  
+    m_products = new Product[totalProducts];
+    for (int i = 0; i < totalProducts; i++){
+        m_products[i] = products[i];
+    }
+
+    m_totalProducts = totalProducts;
+    m_capacity = totalProducts;
+}

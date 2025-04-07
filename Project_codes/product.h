@@ -13,6 +13,7 @@ class Product {
     Product(const char* name, double price, int quantity);
 
     // Setters Functions
+    void set(const char* name, double price, int quantity)
     void setName(const char* name);  
     void setPrice(double price);
     void setQuantity(int quantity);

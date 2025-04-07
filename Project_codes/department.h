@@ -35,7 +35,9 @@ class Department{
 
     Product getProductAt(int index) const;
 
-    void updateProductAt(int index, const Product& product);    
+    void updateProductAt(int index, const Product& product);
+
+   void setDepartmentInfo(const char* name, Product* products, int totalProducts);
   
 }
 

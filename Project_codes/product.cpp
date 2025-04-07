@@ -74,4 +74,8 @@ using namespace std;
     return m_quantity;
   }
 
-
+  void Product::set(const char* name, double price, int quantity){
+    setName(name);
+    setPrice(price);
+    setQuantity(quantity);
+ }
