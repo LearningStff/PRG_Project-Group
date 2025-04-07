@@ -1,13 +1,10 @@
 #include <fstream>
 #include <sstream>
 #include <iostream>
+#include "globals.h"
 #include "department.h"
 #include "product.h"
 using namespace std;
-
-extern Department* StoreDepartments;
-extern int TotalDepartments;
-extern const char* csvFile;
 
 int loadDataFromCsv(const char* filePath)
 {

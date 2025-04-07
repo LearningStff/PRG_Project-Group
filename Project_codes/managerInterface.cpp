@@ -1,15 +1,10 @@
 #define CRT_SECURE_NO_WARNINGS
+#include "globals.h"
 #include "managerInterface.h"
 #include "fileHandling.h"
 #include <iostream>
 #include <cstring>
 using namespace std;
-
-
-// Global variables
-extern Department* StoreDepartments; // Pointer to the array of departments
-extern int TotalDepartments; //total number of departments
-extern const char* csvFile; //the path of th CSV file
 
 // Constructor
 ManagerInterface::ManagerInterface()

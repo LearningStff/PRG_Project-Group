@@ -1,5 +1,6 @@
 #define CRT_SECURE_NO_WARNINGS
 #include "customerInterface.h"
+#include "globals.h"
 #include <iostream>
 #include <cstring>
 using namespace std;
