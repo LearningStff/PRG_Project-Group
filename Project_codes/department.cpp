@@ -33,6 +33,7 @@ using namespace std;
     m_products = nullptr;
   }
 
+  // set department name
   void Department::setDeptName(const char* name)
   {
     if (name != nullptr && name[0] != '\0'){
@@ -41,11 +42,13 @@ using namespace std;
       m_name[0] = '\0';
     }
   }
-  
+
+  // display department name
   const char* Department::displayDeptNames() const{
     return m_name;
   }
-  
+
+  // add product to department
   void Department::addProduct(const Product& product){
     if (m_totalProducts == m_capacity){
       Product* temp = new Product[m_totalProducts + 1];
@@ -58,7 +61,8 @@ using namespace std;
       m_products = temp;
     }
   }
-  
+
+  // list all products in department
   void Department::listProducts() const {
     if (m_totalProducts == 0){
       cout << "No current products in the department." << endl;

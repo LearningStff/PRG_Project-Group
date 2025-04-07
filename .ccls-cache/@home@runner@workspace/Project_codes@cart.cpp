@@ -21,7 +21,13 @@ Cart::~Cart(){
 }
 
 void Cart::addProductToCart(const Product& product, int quantity){
-  
+  // add a product to the cart
+  if (quantity > 0){
+    m_products[m_totalItems] = product;
+    m_quantities[m_totalItems] = quantity;
+    m_totalItems++;
+    
+  }
 }
 
 
