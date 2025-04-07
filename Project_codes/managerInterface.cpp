@@ -1,5 +1,6 @@
 #define CRT_SECURE_NO_WARNINGS
 #include "managerInterface.h"
+#include <climits>
 #include <iostream>
 #include <cstring>
 using namespace std;
