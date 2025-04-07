@@ -35,14 +35,7 @@ class Department{
 
     Product getProductAt(int index) const;
 
-    void Department(int index, const Product& product)
-    
-
-    
-
-    
-
-    
+    void updateProductAt(int index, const Product& product);    
   
 }
 
