@@ -4,6 +4,7 @@
 #include <cstring>
 using namespace std;
 
+
 // Global variables
 extern Department* StoreDepartments; // Pointer to the array of departments
 extern int TotalDepartments; //total number of departments
