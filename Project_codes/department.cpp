@@ -27,7 +27,7 @@ using namespace std;
     m_capacity = totalProducts;
   }
 
-  // Destructord
+  // Destructor
   Department::~Department(){
     delete [] m_products;
     m_products = nullptr;
@@ -74,7 +74,7 @@ using namespace std;
       return;
     }
     for (int i = 0; i < m_totalProducts; i++){
-      cout << m_products[i].getName() << "," << m_products[i].getPrice() << "per unit, " << m_products[i].getQuantity() << " units in stock." << endl;
+      cout << m_products[i].getName() << ", $" << m_products[i].getPrice() << " per unit, " << m_products[i].getQuantity() << " units in stock." << endl;
     }
   }
 
@@ -113,4 +113,29 @@ void Department::setDepartmentInfo(const char* name, Product* products, int tota
 
     m_totalProducts = totalProducts;
     m_capacity = totalProducts;
+}
+
+Department::Department(const Department& p){
+    strcpy(m_name, p.m_name);
+    m_totalProducts = p.m_totalProducts;
+    m_capacity = p.m_capacity;
+
+  m_products = new Product[m_totalProducts];
+  for (int i = 0; i < m_totalProducts; i++){
+    m_products[i] = p.m_products[i];
+  }
+}
+
+Department& Department::operator=(const Department& other){
+  if (this != &other) {
+    strcpy(m_name, other.m_name);
+    m_totalProducts = other.m_totalProducts;
+    m_capacity = other.m_capacity;
+    delete [] m_products;
+    m_products = new Product[m_totalProducts];
+    for (int i = 0; i < m_totalProducts; i++){
+      m_products[i] = other.m_products[i];
+    }
+  } 
+  return *this;
 }

@@ -6,5 +6,5 @@
 int loadDataFromCsv(const char* filePath);
 
 //Function to save all changes to the CSV file
-void saveChangesToCSV();
+void saveStoreToCSV();
 

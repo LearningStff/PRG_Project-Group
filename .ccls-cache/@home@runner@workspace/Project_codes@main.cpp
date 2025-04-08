@@ -45,7 +45,7 @@ int main() {
     }
 
     // Save any changes to the CSV file before exiting
-    saveChangesToCSV();  // Ensure changes are saved to CSV
+    saveStoreToCSV();  // Ensure changes are saved to CSV
 
     return 0;
 }

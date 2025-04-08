@@ -161,5 +161,5 @@ void ManagerInterface::addItemToDepartment() {
 //Saves all changes made to the departments and their products
 void ManagerInterface::saveChangesToCSV() {
     //Call the function from fileHandling.cpp to save the data
-    saveChangesToCSV();
+    saveStoreToCSV();
 }

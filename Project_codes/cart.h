@@ -8,6 +8,7 @@ class Cart{
     int *m_quantities;
     int m_totalItems;
     double m_totalPrice;
+    int m_capacity;
 
   public:
     Cart();

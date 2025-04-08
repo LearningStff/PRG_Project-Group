@@ -11,6 +11,7 @@ Cart::Cart(){
   m_quantities = nullptr;
   m_totalItems = 0;
   m_totalPrice = 0.0;
+  m_capacity = 0;
 }
 
 Cart::~Cart(){
@@ -22,15 +23,26 @@ Cart::~Cart(){
 
 bool Cart::addItem(const Product& product, int quantity){
   // add a product to the cart
-  if (quantity > 0){
-    m_products[m_totalItems] = product;
-    m_quantities[m_totalItems] = quantity;
-    m_totalItems++;
-    return true;
-  } else {
-    cout << "Invalid quantity." << endl;
+  if (quantity < 0){
     return false;
   }
+  if (m_totalItems == m_capacity) {
+    Product* tempProducts = new Product[m_totalItems + 1];
+    int* tempQuantities = new int[m_totalItems + 1];
+    for (int i = 0; i < m_totalItems; i++){
+      tempProducts[i] = m_products[i];
+      tempQuantities[i] = m_quantities[i];
+    }
+    delete [] m_products;
+    delete [] m_quantities;
+    m_products = tempProducts;
+    m_quantities = tempQuantities;
+    m_capacity++;
+  }
+  m_products[m_totalItems] = product;
+  m_quantities[m_totalItems] = quantity;
+  m_totalItems++;
+  return true;
 }
 
 

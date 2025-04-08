@@ -11,9 +11,16 @@ class Department{
 
 
   public:
+
+    // rule of three constructor, destructor and copy constructor
     Department();
     Department(const char* name, Product* products, int totalProducts);
     ~Department();
+    // copy constructor
+    Department(const Department& other);
+
+    // assignment operator
+    Department& operator=(const Department& other);
 
 
     // necessarry public functions
@@ -37,8 +44,7 @@ class Department{
 
     void updateProductAt(int index, const Product& product);
 
-   void setDepartmentInfo(const char* name, Product* products, int totalProducts);
-  
+    void setDepartmentInfo(const char* name, Product* products, int totalProducts);
 };
 
 
