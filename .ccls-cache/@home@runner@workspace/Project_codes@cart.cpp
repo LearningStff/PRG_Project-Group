@@ -6,6 +6,7 @@
 #include "cart.h"
 using namespace std;
 
+// cosntructor to initialize the cart to empty state
 Cart::Cart(){
   m_products = nullptr;
   m_quantities = nullptr;
@@ -14,6 +15,7 @@ Cart::Cart(){
   m_capacity = 0;
 }
 
+// destructor to delete the dynamic arrays
 Cart::~Cart(){
   delete [] m_products;
   delete [] m_quantities;
@@ -21,6 +23,8 @@ Cart::~Cart(){
   m_quantities = nullptr;
 }
 
+
+// add item to cart function - returns true if successful, false otherwise
 bool Cart::addItem(const Product& product, int quantity){
   // add a product to the cart
   if (quantity < 0){
@@ -55,15 +59,15 @@ void Cart::listItemsInCart() const {
     }
 }
 
-// checkout function'
-bool Cart::checkout() {
-  if (m_totalItems == 0) {
-    return false;  // return false if the cart is empty 
-  } else {
-    return true;
-  }
-   clearCart();
-}
+// // checkout function'
+// bool Cart::checkout() {
+//   if (m_totalItems == 0) {
+//     return false;  // return false if the cart is empty 
+//   } else {
+//     return true;
+//   }
+//    clearCart();
+// }
 
 // clear cart function
 void Cart::clearCart() {

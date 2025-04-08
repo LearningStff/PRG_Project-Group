@@ -74,6 +74,7 @@ using namespace std;
     return m_quantity;
   }
 
+  // set function to set all the member variables at once
   void Product::set(const char* name, double price, int quantity){
     setName(name);
     setPrice(price);

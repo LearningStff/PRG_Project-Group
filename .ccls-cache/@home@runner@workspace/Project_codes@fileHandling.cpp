@@ -4,6 +4,7 @@
 #include "globals.h"
 #include "department.h"
 #include "product.h"
+#include "interface.h"
 using namespace std;
 
 int loadDataFromCsv(const char* filePath)

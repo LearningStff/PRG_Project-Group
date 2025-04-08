@@ -90,7 +90,7 @@ using namespace std;
     return m_products[index];
   }
 
-
+  // update product at index - this function is used to update the quantity of a product in the department
 void Department::updateProductAt(int index, const Product& product){
     if (index >= 0 && index < m_totalProducts){
         m_products[index] = product;
@@ -100,6 +100,7 @@ void Department::updateProductAt(int index, const Product& product){
     }
 }
 
+// set department info - name, products, total products
 void Department::setDepartmentInfo(const char* name, Product* products, int totalProducts){
     setDeptName(name);
     if (m_products != nullptr){
@@ -115,10 +116,11 @@ void Department::setDepartmentInfo(const char* name, Product* products, int tota
     m_capacity = totalProducts;
 }
 
+// copy constructor to copy the department object to another department object
 Department::Department(const Department& p){
-    strcpy(m_name, p.m_name);
-    m_totalProducts = p.m_totalProducts;
-    m_capacity = p.m_capacity;
+  strcpy(m_name, p.m_name);
+  m_totalProducts = p.m_totalProducts;
+  m_capacity = p.m_capacity;
 
   m_products = new Product[m_totalProducts];
   for (int i = 0; i < m_totalProducts; i++){
@@ -126,6 +128,7 @@ Department::Department(const Department& p){
   }
 }
 
+// overload the assignment operator to copy the department object to another department object and return the new department object
 Department& Department::operator=(const Department& other){
   if (this != &other) {
     strcpy(m_name, other.m_name);

@@ -40,10 +40,13 @@ class Department{
     // Action: Writes all modifications (departments and items) to the CSV file.
     int getTotalProducts() const; // Add this line to get the total number of products in the department
 
+    //get a product at a specific index in the department array of products
     Product getProductAt(int index) const;
 
+    //update a product at a specific index with a new product object 
     void updateProductAt(int index, const Product& product);
 
+    // set department information for manager interface 
     void setDepartmentInfo(const char* name, Product* products, int totalProducts);
 };
 
